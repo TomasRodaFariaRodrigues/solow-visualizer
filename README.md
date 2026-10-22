@@ -6,35 +6,36 @@ Each model offers two views:
 
 - **Steady state**: a 45-degree diagram of the law of motion, with each line's
   steady state marked.
+
+![](picture1.png)
+
 - **Policy transition**: capital, output, consumption and saving over time
   after a parameter changes in a chosen period, drawn against the path the
   economy would have followed without the change.
 
+![](picture2.png)
+
 Built with Tkinter and matplotlib, themed with sv-ttk.
+
+
+
+
 
 ## Platform support
 
-The app has been developed and tested on **Windows** only. It will not be tested on macOS or Linux. It may run there, but expect issues (mainly visual) that I do not personally care to solve.
+The app has been developed and tested on **Windows** only. It has not and will not be tested on macOS or any Linux distribution. It may run there, but expect issues (mainly visual) that I do not personally care to solve.
 
 ## Models
 
 | Model | Law of motion |
 | --- | --- |
-| Base Solow | $`k + s·k^α − (δ+n)·k`$ |
-| Solow with labour-augmenting technology | $`k + A·[s·(\frac{k}{A})^α − (δ+g+n)·\frac{k}{A}]`$ |
-| Solow with technology and human capital | as above with $`A·h`$, where $`h = e^{ψu}`$ |
+| Base Solow | $k + s\cdot k^{α} − (δ+n)\cdot k$ |
+| Solow with labour-augmenting technology | $k + A \cdot [s \cdot \frac{k}{A}^{α} − (δ+g+n)\cdot \frac{k}{A}]$ |
+| Solow with technology and human capital | as above with $A \cdot h$, where $h = e^{ψu}$ |
 
 ## Running it
 
-Install the dependencies:
-
-```
-python -m venv .venv
-.\.venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Then either run `solow_visualizer/main.py` directly, or from the repository root like so:
+Install the dependencies noted in requirements.txt. Then either run `solow_visualizer/main.py` directly, or from the repository root like so:
 
 ```
 python -m solow_visualizer.main
@@ -53,4 +54,4 @@ All code lives in the `solow_visualizer/` folder.
 | `solowtechhcap.py` | The Solow model with technology and human capital. |
 | `diagram.py` | Drawing code for the 45-degree steady-state diagrams, shared by all models. |
 | `transition.py` | Simulates and draws the policy transition view, shared by all models. |
-| `__init__.py` | Marks the folder as a Python package and ensures sharp rendering. |
+| `__init__.py` | Marks the folder as a Python package and makes the window render sharply on scaled Windows displays. |
